@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+
+    <!-- VIEWPORT SCALE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Spotify</title>
+  </head>
+
+  <body>
+
+    <!-- header di pagina  -->
+    <header>
+      <!-- Fixed header Item - Link to Premium account - Always visible -->
+      <div id="top-bar">
+        <button type="button" name="button">Effettua l'upgrade</button>
+      </div>
+    </header>
+    <main>
+      <!-- Fixed side bar - Navbar - Always visible - FLEX - -->
+
+      <nav id="side-bar">
+
+        <div class="section1">
+
+          <div class="main-logo">
+            <a href="#"><img src="img/logo.svg" alt="main-logo"></a>
+            <a href="#"><img src="img/logo-small.svg" alt="logo-small"></a>
+          </div>
+
+          <ul class="usersearch">
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home"><span>Home</span></a></li>
+            <li><a class="logo" href="#"><img src="img/search.svg" alt="search"><span>Cerca</span></a></li>
+            <li><a class="logo" href="#"><img src="img/libreria.svg" alt="libreria"><span>La tua libreria</span></a></li>
+          </ul>
+          <h3>Playlist</h3>
+          <ul class="playlist">
+            <li><a class="logo" href="#"><img src="img/favicon.ico" alt="playlist"><span>Crea Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+          </ul>
+        </div>
+
+        <div class="section2">
+          <ul class="song-playing">
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li>
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section>
+        <nav id="info-bar">
+          <div class="menu">
+            <a href="#">IN EVIDENZA</a>
+            <div class="linea"></div>
+          </div>
+          <div class="menu">
+            <a href="#">PODCAST</a>
+            <div class="linea"></div>
+          </div>
+          <div class="menu">
+            <a href="#">CLASSIFICHE</a>
+            <div class="linea"></div>
+          </div>
+          <div class="menu">
+            <a href="#">GENERI E MODO</a>
+            <div class="linea"></div>
+          </div>
+          <div class="menu">
+            <a href="#">NUOVE USCITE</a>
+            <div class="linea"></div>
+          </div>
+          <div class="menu">
+            <a href="#">SCOPRI</a>
+            <div class="linea"></div>
+          </div>
+
+        </nav>
+
+        <h2 class="title">Recently Played</h2>
+        <div id="recently-played" class="spotify-sections">
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/metal_lifting.jpg" alt="Metal">
+            </div>
+            <h3>Heavy Metal</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/stranger.jpeg" alt="stranger">
+            </div>
+            <h3>Stranger Things Vol.1 (a Netflix original Series Soundtrack)</h3>
+            <h4>Kyle Dixon & Michael Stern</h4>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/aquietplace.jpeg" alt="quiet">
+            </div>
+            <h3>A Quiet Place</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/split.jpeg" alt="split">
+            </div>
+            <h3>Split</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/cure.jpeg" alt="Cure">
+            </div>
+            <h3>A cure for Welness</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/sinister.jpeg" alt="sinister">
+            </div>
+            <h3>Sinister</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+        </div>
+        <h2 class="title">Creato per Jhon Doe</h2>
+        <p class="title">Piu ascolti piu accurati saranno i suggerimenti</p>
+        <div id="user-played"  class="spotify-sections">
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/radar.jpeg" alt="radar">
+            </div>
+            <h3>Release Radar</h3>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/mixdaily.jpeg" alt="mix">
+            </div>
+            <h3>Daily Mix</h3>
+
+          </div>
+
+        </div>
+
+        <h2 class="title">Artisti piu popolari</h2>
+        <p class="title">Piu ascolti piu accurati saranno i suggerimenti</p>
+        <div id="popular-artist" class="spotify-sections">
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/youg.jpeg" alt="youg">
+            </div>
+            <h3>Yuog</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+          <div class="content">
+            <div class="img-cover">
+              <img src="img/einaudi.jpeg" alt="einaudi">
+            </div>
+            <h3>Ludovico Einauidi</h3>
+            <h4>Subtitle</h4>
+          </div>
+
+        </div>
+
+
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div id="bottom-bar">
+        <div class="section1">
+          <div class="cotenuto">
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+        </div>
+        <div class="section2">
+          <div class="cotenuto">
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+        </div>
+        <div class="section3">
+          <div class="cotenuto">
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+        </div>
+    </footer>
+
+
+
+
+
+  </body>
+</html>
