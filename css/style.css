@@ -6,30 +6,65 @@
 }
 
 
+
 body{
+  background-color: rgb(35, 39, 47);
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   width:100%;
   height:100vh;
-  color:#5a5a5a;
-
-  /* elementi di debug */
-  background-color: lightblue;
+  color:rgb(101, 104, 113);
 }
 
-h3{
-  font-size: 1.2em;
+/* STILE GENERALE TESTI */
+
+h2{
+  color:white;
+  padding: 15px 0;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+p{
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+
+h3, .spotify-sections h3> a{
+  color:white;
+  padding: 15px 0;
+  font-size: 1.1em;
+  font-weight: 700;
 }
 
 h4{
-  font-size: 1em;
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
 }
 
-
-h2, h3, h3> a{
-  color:white;
+a {
   text-decoration: none;
 }
+
+#info-bar a {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: .8em;
+  font-weight: 400;
+  color:#75787c;
+}
+
+
+#side-bar a {
+  color:#75787c;
+  font-size: 1em;
+  font-weight: 500;
+}
+
 
 /* - PADDING GENERALI */
 
@@ -50,13 +85,11 @@ h2, h3, h3> a{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  /* elementi di debug */
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: rgb(24, 24, 33);
 }
 
 
-/* - SIDEBAR fixed laterale */
+/* - SIDEBAR regole contenitore .................... */
 #side-bar{
   position: fixed;
   top:0;
@@ -65,19 +98,15 @@ h2, h3, h3> a{
   height: 100%;
   z-index: 980;
   padding-top:25px;
-
-  /* elementi di debug */
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: rgb(0, 0, 0);
 }
 
-#side-bar a{
-  text-decoration: none;
-  color:#75787c;
-}
+/* - SIDEBAR Regole Testi  */
+
+
 
 
 /* - SIDEBAR dimensioni immagini della sidebar */
-
 img[alt~="logo-small"] {
   display:none;
 }
@@ -99,7 +128,6 @@ img[alt~="logo-small"] {
 
 #side-bar ul{
   width:100%;
-
   padding:0;
 
   /* REGOLE DI DEBUG */
@@ -119,8 +147,6 @@ img[alt~="logo-small"] {
   margin-right: 8px;
   background-color: #75787c;
   vertical-align: middle;
-
-
 }
 
 #side-bar .section2{
@@ -129,23 +155,27 @@ img[alt~="logo-small"] {
   width:100%;
 }
 
-
-
-/* - SEZIONE INFOBAR disposizione menu flex */
+/* - SEZIONE INFOBAR disposizione menu flex  ........... */
+section:first-of-type{
+  margin-top: 80px;
+}
 
 section.main{
-
   width: calc(100% - 200px);
   margin-left: 200px;
-  margin-top: 80px;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-
   /* REGOLE DI DEBUG */
-  background-color: orange;
   border:1px solid black;
 }
+
+
+
+#popular-artist >div:last-of-type{
+  height:calc(100% + 80px);
+}
+
 
 #info-bar{
   width:100%;;
@@ -155,8 +185,6 @@ section.main{
 }
 
 #info-bar .menu{
-  padding-right: 10px;
-  padding-left: 10px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -168,12 +196,12 @@ section.main{
 }
 
 #info-bar .menu .linea{
-  width:50px;
-  height: 2px;
-  border-radius: 5px;
+  width:30px;
+  height: 4px;
+  border-radius: 3px;
 
   /* REGOLE DI DEBUG */
-  background-color: red;
+  background-color: rgb(110, 131, 89);
 }
 
 #info-bar .menu a{
@@ -190,32 +218,46 @@ section.main{
   background-color: blue;
 }
 
-#recently-played, #suggested-artist, #popular-artist {
+#recently-played , #suggested-artist , #popular-artist {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   width:100%;
 }
 
 .spotify-sections .content{
 
-  width:calc(100% / 6);
-  min-width:100px;
-  height: auto;
-  text-align: center;
+  /* width: calc((100% / 6) - 100px ); */
+  width: calc((100% / 6) - 20%);
+  min-width: 180px;
 
+  padding-left:2%;
+  padding-right:2%;
+
+  text-align: center;
   /* REGOLE DI DEBUG */
-  border:1px solid black;
+  border:1px solid yellow;
 }
 
 .spotify-sections .content .img-cover img{
-  width:95%;
+  width: 100%;
+  height: auto;
+
 }
 
 #popular-artist.spotify-sections .content .img-cover img{
   border-radius: 50%;
 }
+
+
+#recently-played.spotify-sections .content:first-of-type {
+  padding-left:0;
+}
+
+#recently-played.spotify-sections .content:last-of-type {
+  padding-right:0;
+}
+
 
 
 
@@ -232,9 +274,7 @@ section.main{
   flex-flow:row;
   justify-content: space-between;
   align-items:center;
-
-  /* elementi di debug */
-  background-color: rgba(0, 255, 0, 0.3);
+  background-color: rgb(24, 24, 24);
 }
 
 /* .............SEZIONE NOW PLAYING................ */
@@ -313,7 +353,7 @@ section.main{
   top:0;
   left:0;
   width:100%;
-  height:5px;
+  height:4px;
   border-radius: 3px;
   background-color: #5a5a5a;
   margin: 0 5px;
@@ -323,7 +363,7 @@ section.main{
   position: absolute;
   left:0px;
   width:70%;
-  height:5px;
+  height:4px;
   border-radius: 3px;
   background-color: #c1c1c1;
 }
