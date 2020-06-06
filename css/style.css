@@ -5,73 +5,54 @@
   box-sizing: border-box;
 }
 
-/* @font-face {
-  font-family:Gotham-medium;
-  src: url("../font/iCiel Gotham-Medium.ttf");
-}
-
-@font-face {
-  font-family:Gotham-thin;
-  src: url("../font/iCiel Gotham-Thin.ttf");
-} */
 
 body{
   font-family: 'Montserrat', sans-serif;
-  width:100vw;
+  font-size: 14px;
+  width:100%;
   height:100vh;
+  color:#5a5a5a;
+
+  /* elementi di debug */
   background-color: lightblue;
-  color:#75787c;
 }
 
-h2, h3{
+h3{
+  font-size: 1.2em;
+}
+
+h4{
+  font-size: 1em;
+}
+
+
+h2, h3, h3> a{
   color:white;
+  text-decoration: none;
 }
-
-
 
 /* - PADDING GENERALI */
 
-#side-bar{
-  padding-top:20px;
-  padding-left: 20px;
-  padding-right:20px;
-}
-#top-bar , #bottom-bar{
-  padding-right:20px;
-  padding-left: 20px;
+.centratura{
+  padding-right:10px;
+  padding-left: 10px;
 }
 
-/* - REGOLE GENERALI */
+/* - .............TOP BAR................  */
 
 #top-bar{
   position: fixed;
   top:0;
   left:0;
-  width: 100vw;
+  width: 100%;
   height:80px;
   z-index: 900;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: rgba(0, 0, 255, 0.3);
-}
-
-
-
-#bottom-bar{
-  position: fixed;
-  bottom:0;
-  left:0;
-  width:100vw;
-  height: 90px;
-  z-index: 999;
-  display: flex;
-  flex-flow:row;
-  justify-content: space-between;
-  align-items:center;
 
   /* elementi di debug */
-  background-color: rgba(0, 255, 0, 0.3);
+  background-color: rgba(0, 0, 255, 0.3);
 }
 
 
@@ -83,9 +64,7 @@ h2, h3{
   width:200px;
   height: 100%;
   z-index: 980;
-  display: flex;
-  flex-flow: wrap column;
-  justify-content: space-between;
+  padding-top:25px;
 
   /* elementi di debug */
   background-color: rgba(255, 0, 0, 0.3);
@@ -104,51 +83,72 @@ img[alt~="logo-small"] {
 }
 
 #side-bar .main-logo img{
-  height: 40px;
+  height: 30px;
 }
 
 #side-bar a.logo img{
-  width:30px;
+  width:25px;
   height: auto;
   vertical-align: middle;
 }
 
+.radius img{
+  border-radius: 50%;
+  background-color: red;
+}
+
 #side-bar ul{
   width:100%;
-  border:1px solid black;
+
   padding:0;
+
+  /* REGOLE DI DEBUG */
+  border:1px solid black;
 }
 
 #side-bar ul li{
   padding-bottom: 10px;
-  display:inline-block;
   list-style-type: none;
   width:100%
 }
 
+#side-bar ul li i.fa-plus{
+  color:white;
+  font-size: 12px;
+  padding:8px;
+  margin-right: 8px;
+  background-color: #75787c;
+  vertical-align: middle;
+
+
+}
+
 #side-bar .section2{
   position:absolute;
-  bottom:90px;
+  bottom:80px;
   width:100%;
 }
+
 
 
 /* - SEZIONE INFOBAR disposizione menu flex */
 
-section:first-of-type{
-  background-color: orange;
-  border:1px solid black;
-  width:100vw;
-  padding-left: 220px;
-  padding-right: 20px;
-  margin-top: 90px;
+section.main{
+
+  width: calc(100% - 200px);
+  margin-left: 200px;
+  margin-top: 80px;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
+
+  /* REGOLE DI DEBUG */
+  background-color: orange;
+  border:1px solid black;
 }
 
 #info-bar{
-  width:100%;
+  width:100%;;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -156,17 +156,23 @@ section:first-of-type{
 
 #info-bar .menu{
   padding-right: 10px;
+  padding-left: 10px;
   height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  /* REGOLE DI DEBUG */
+  border:1px solid black;
 }
 
 #info-bar .menu .linea{
   width:50px;
   height: 2px;
-  border-radius: 50%;
+  border-radius: 5px;
+
+  /* REGOLE DI DEBUG */
   background-color: red;
 }
 
@@ -176,30 +182,35 @@ section:first-of-type{
 }
 
 /* - SEZIONE CONTENUTO PAGINA SPOTIFY */
-
 .title{
   width: 100%;
   text-align: left;
+
+  /* REGOLE DI DEBUG */
   background-color: blue;
 }
 
-#recently-played, #user-played, #popular-artist {
+#recently-played, #suggested-artist, #popular-artist {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width:100vw;
+  align-items: stretch;
+  width:100%;
 }
 
 .spotify-sections .content{
-  border:1px solid black;
+
   width:calc(100% / 6);
   min-width:100px;
   height: auto;
   text-align: center;
+
+  /* REGOLE DI DEBUG */
+  border:1px solid black;
 }
 
 .spotify-sections .content .img-cover img{
-  width:90%;
+  width:95%;
 }
 
 #popular-artist.spotify-sections .content .img-cover img{
@@ -209,12 +220,143 @@ section:first-of-type{
 
 
 
+/* .............BOTTOM BAR................ */
+#bottom-bar{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 80px;
+  z-index: 999;
+  display: flex;
+  flex-flow:row;
+  justify-content: space-between;
+  align-items:center;
+
+  /* elementi di debug */
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+/* .............SEZIONE NOW PLAYING................ */
+#bottom-bar .now-playing{
+  width: 200px;
+  height:50px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+
+/* REGOLE DI DEBUG */
+  background-color: lightblue;
+  border:1px solid black;
+}
+
+
+#bottom-bar .now-playing img{
+  max-width:50px;
+  height:auto;
+}
+
+#bottom-bar .now-playing >div:last-of-type{
+  width: 30px;
+  text-align: center;
+
+  /* REGOLE DI DEBUG */
+  border:1px solid black;
+
+}
+
+
+
+/* .............SEZIONE MUSIC PLAYER................ */
+#bottom-bar .music-player{
+  width: 100%;
+  max-width:600px;
+  display: flex;
+  flex-flow:column;
+  justify-content:center;
+  align-items:center;
+
+  /* REGOLE DI DEBUG */
+  background-color: white;
+}
+
+
+/* .............SEZIONE AUDIOSETTINGS................ */
+#bottom-bar .audio-settings{
+  width: 200px;
+  display:flex;
+  justify-content: space-between;
+
+  /* REGOLE DI DEBUG */
+  background-color: white;
+
+}
+
+
+
+
+/* .............Buttom bar regole generali................ */
+
+#bottom-bar .playbar{
+  width:100%;
+  display: flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+
+  /* REGOLE DI DEBUG */
+  background-color: red;
+}
+
+#bottom-bar .playbar .playbar-bg{
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  border-radius: 3px;
+  background-color: #5a5a5a;
+  margin: 0 5px;
+}
+
+#bottom-bar .playbar .playbar-bg .playbar-line{
+  position: absolute;
+  left:0px;
+  width:70%;
+  height:5px;
+  border-radius: 3px;
+  background-color: #c1c1c1;
+}
+
+#bottom-bar button{
+  background-color: transparent;
+  border: 0;
+}
+
+
+
 
 
 
 @media all and (max-width:400px){
 
-  span{
+/* nuove dimensioni della SideBar */
+  #side-bar{
+    width:50px;
+    padding-top:5px;
+  }
+
+  #side-bar ul li i.fa-plus-square{
+    display: none;
+  }
+
+  section.main{
+    margin-left: 50px;
+  }
+
+
+
+  .collapse{
     display:none;
   }
 
@@ -224,6 +366,7 @@ section:first-of-type{
 
   img[alt~="logo-small"] {
     display:block;
+    width:25px;
   }
 
 

@@ -23,14 +23,14 @@
     <!-- header di pagina  -->
     <header>
       <!-- Fixed header Item - Link to Premium account - Always visible -->
-      <div id="top-bar">
+      <div id="top-bar" class="centratura">
         <button type="button" name="button">Effettua l'upgrade</button>
       </div>
     </header>
     <main>
-      <!-- Fixed side bar - Navbar - Always visible - FLEX - -->
 
-      <nav id="side-bar">
+      <!-- Fixed side bar - Navbar - Always visible -->
+      <nav id="side-bar" class="centratura">
 
         <div class="section1">
 
@@ -40,32 +40,35 @@
           </div>
 
           <ul class="usersearch">
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home"><span>Home</span></a></li>
-            <li><a class="logo" href="#"><img src="img/search.svg" alt="search"><span>Cerca</span></a></li>
-            <li><a class="logo" href="#"><img src="img/libreria.svg" alt="libreria"><span>La tua libreria</span></a></li>
+            <li><a class="logo" href="#"><img src="img/home.svg" alt="home"><span class="collapse">Home</span></a></li>
+            <li><a class="logo" href="#"><img src="img/search.svg" alt="search"><span class="collapse">Cerca</span></a></li>
+            <li><a class="logo" href="#"><img src="img/libreria.svg" alt="libreria"><span class="collapse">La tua libreria</span></a></li>
           </ul>
-          <h3>Playlist</h3>
+          <h3 class="collapse">Playlist</h3>
           <ul class="playlist">
-            <li><a class="logo" href="#"><img src="img/favicon.ico" alt="playlist"><span>Crea Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
-            <li><a class="logo" href="#"><span>Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><i class="fas fa-plus"></i><span class="collapse">Crea Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            <li><a class="logo" href="#"><span class="collapse">Nome Playlist</span></a></li>
           </ul>
         </div>
 
         <div class="section2">
           <ul class="song-playing">
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li>
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li>
+            <li><a class="logo radius" href="#"><img src="img/profile.svg" alt="profile"><span class="collapse">Jhon Doe</span></a></li>
+            <li><a class="logo" href="#"><i class="far fa-arrow-alt-circle-down"></i><span class="collapse">Jhon Doe</span></a></li>
+
           </ul>
         </div>
       </nav>
 
-      <section>
+      <!--       parte principale dei contenuti            -->
+
+      <section class="main centratura">
         <nav id="info-bar">
           <div class="menu">
             <a href="#">IN EVIDENZA</a>
@@ -109,7 +112,7 @@
             <div class="img-cover">
               <img src="img/stranger.jpeg" alt="stranger">
             </div>
-            <h3>Stranger Things Vol.1 (a Netflix original Series Soundtrack)</h3>
+            <h3><a href="#">Stranger Things Vol.1 (a Netflix original Series Soundtrack)</a></h3>
             <h4>Kyle Dixon & Michael Stern</h4>
           </div>
 
@@ -117,7 +120,7 @@
             <div class="img-cover">
               <img src="img/aquietplace.jpeg" alt="quiet">
             </div>
-            <h3>A Quiet Place</h3>
+            <h3><a href="#">A Quiet Place</a></h3>
             <h4>Subtitle</h4>
           </div>
 
@@ -125,7 +128,7 @@
             <div class="img-cover">
               <img src="img/split.jpeg" alt="split">
             </div>
-            <h3>Split</h3>
+            <h3><a href="#">Split</a></h3>
             <h4>Subtitle</h4>
           </div>
 
@@ -133,7 +136,7 @@
             <div class="img-cover">
               <img src="img/cure.jpeg" alt="Cure">
             </div>
-            <h3>A cure for Welness</h3>
+            <h3><a href="#">A cure for Welness</a></h3>
             <h4>Subtitle</h4>
           </div>
 
@@ -142,20 +145,20 @@
             <div class="img-cover">
               <img src="img/sinister.jpeg" alt="sinister">
             </div>
-            <h3>Sinister</h3>
+            <h3><a href="#">Sinister</a></h3>
             <h4>Subtitle</h4>
           </div>
 
         </div>
         <h2 class="title">Creato per Jhon Doe</h2>
         <p class="title">Piu ascolti piu accurati saranno i suggerimenti</p>
-        <div id="user-played"  class="spotify-sections">
+        <div id="suggested-artist" class="spotify-sections">
 
           <div class="content">
             <div class="img-cover">
               <img src="img/radar.jpeg" alt="radar">
             </div>
-            <h3>Release Radar</h3>
+            <h3><a href="#">Release Radar</a></h3>
           </div>
 
           <div class="content">
@@ -184,7 +187,7 @@
             <div class="img-cover">
               <img src="img/einaudi.jpeg" alt="einaudi">
             </div>
-            <h3>Ludovico Einauidi</h3>
+            <h3>Ludovico Enauidi</h3>
             <h4>Subtitle</h4>
           </div>
 
@@ -198,18 +201,53 @@
 
     <footer>
       <div id="bottom-bar">
-        <div class="section1">
-          <div class="cotenuto">
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+
+        <div class="now-playing centratura">
+          <div class="img-cover">
+            <img src="img/sinister.jpeg" alt="sinister">
+          </div>
+          <div class="">
+            <h3><a href="#">Sinister</a></h3>
+            <h4>Brano Nome</h4>
+          </div>
+          <div>
+            <i class="far fa-heart"></i>
+            <i class="far fa-folder"></i>
+          </div>
         </div>
-        <div class="section2">
-          <div class="cotenuto">
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+
+        <div class="music-player">
+          <div class="buttons">
+            <button type="button" name="button"><i class="fas fa-random"></i></button>
+            <button type="button" name="button"><i class="fas fa-step-backward"></i></button>
+            <button type="button" name="button"><i class="far fa-play-circle"></i></button>
+            <button type="button" name="button"><i class="fas fa-step-forward"></i></button>
+            <button type="button" name="button"><i class="fas fa-redo-alt"></i></button>
+          </div>
+          <div class="playbar">
+            <span><a href="#">0:25</a></span>
+            <span class="playbar-bg">
+              <a class="playbar-line" href="#"></a>
+            </span>
+            <span><a href="#">4:25</a></span>
+          </div>
         </div>
-        <div class="section3">
-          <div class="cotenuto">
-            <li><a class="logo" href="#"><img src="img/home.svg" alt="home">Home</a></li></div>
+
+        <div class="audio-settings centratura">
+          <button type="button" name="button"><i class="fas fa-sliders-h"></i></button>
+          <button type="button" name="button"><i class="fas fa-tv"></i></button>
+          <button type="button" name="button"><i class="fas fa-volume-up"></i></button>
+          <div class="playbar">
+            <span class="playbar-bg">
+              <a class="playbar-line" href="#"></a>
+            </span>
+          </div>
         </div>
+
+      </div>
+
+
+
     </footer>
 
 
