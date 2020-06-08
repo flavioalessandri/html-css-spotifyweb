@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-
-
-
-
-
-
 body{
   background-color: rgb(35, 39, 47);
   font-family: 'Montserrat', sans-serif;
@@ -21,27 +15,18 @@ body{
 }
 
 /* - PADDING GENERALI */
-
 .centratura{
   padding-right:14px;
   padding-left: 14px;
 }
 
 /* STILE GENERALE TESTI */
-
 h2{
   color:white;
   padding: 15px 0;
   font-size: 1.5em;
   font-weight: 700;
 }
-
-p{
-  padding-bottom: 15px;
-  font-size: .9em;
-  font-weight: 600;
-}
-
 
 h3, .spotify-sections h3> a{
   color:white;
@@ -59,11 +44,13 @@ h4{
 a {
   text-decoration: none;
 }
-
-
+p {
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
 
 /* ............................TOP BAR.............................  */
-
 #top-bar{
   position: fixed;
   top:0;
@@ -85,9 +72,6 @@ a {
   border-radius:20px;
   background-color: transparent;
 }
-
-
-
 
 /* ...............................SIDEBAR ................................. */
 #side-bar{
@@ -145,8 +129,6 @@ img[alt~="logo-small"] {
 #side-bar ul{
   width:100%;
   padding:0;
-  /* REGOLE DI DEBUG */
-  /* border:1px solid black; */
 }
 
 #side-bar ul li{
@@ -204,8 +186,6 @@ section.main{
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-  /* REGOLE DI DEBUG */
-  /* border:1px solid black; */
 }
 
 /* altezza dell'ultima sezione maggiorata della dimensione della BOTTOM BAR */
@@ -227,8 +207,6 @@ section.main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* REGOLE DI DEBUG */
-  /* border:1px solid black; */
 }
 
 #info-bar .menu .linea{
@@ -258,8 +236,6 @@ section.main{
 section .title{
   width: 100%;
   text-align: left;
-  /* REGOLE DI DEBUG */
-  /* background-color: blue; */
 }
 
 #recently-played , #suggested-artist , #popular-artist {
@@ -275,15 +251,12 @@ section .title{
   min-width: 160px;
   height:auto;
   text-align: center;
-  /* REGOLE DI DEBUG */
-  /* border:1px solid yellow; */
 }
 
+/* elemento  utilizzato per riempire spazi vuoti delle righe a dx */
  #suggested-artist::after , #popular-artist::after{
   content:"";
-  min-width: 68%;
-  /* REGOLE DI DEBUG */
-  /* border: 1px solid green; */
+  min-width: calc((100% / 6) * 4);;
 }
 
 .spotify-sections .content:last-of-type {
@@ -320,9 +293,6 @@ section .title{
   padding: 38%;
   transition: 0.3s ease-in-out;
 }
-
-
-
 
 /* .............BOTTOM BAR..................................... */
 #bottom-bar{
@@ -416,7 +386,8 @@ section .title{
 /* ...........BOTTOM BAR /  AUDIO-SETTINGS.............................. */
 #bottom-bar .audio-settings{
   padding-left: 0;
-  width: 180px;
+  width:180px;
+  min-width: 130px;
   display:flex;
   justify-content: space-between;
 }
@@ -464,14 +435,42 @@ section .title{
   background-color: #c1c1c1;
 }
 
+#bottom-bar .music-player .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  color: #c1c1c1;
+  right:30%;
+  line-height: 4px;
+}
+
+#bottom-bar .audio-settings .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 10px;
+  color: #c1c1c1;
+  right:30%;
 
 
+  line-height: 3px;
+}
 
 /* .............SEZIONE GENERALE HOVER .............................. */
 
 .img-cover.overlay:hover .project-overlay{
   opacity:1
 }
+
+#bottom-bar .music-player .playbar:hover .fa-circle,
+#bottom-bar .audio-settings .playbar:hover .fa-circle{
+  display: block;
+}
+
+#bottom-bar .playbar:hover .playbar-bg .playbar-line{
+  background-color: rgb(173, 255, 47);
+}
+
+
 
 
 
