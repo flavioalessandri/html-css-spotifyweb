@@ -155,6 +155,7 @@ img[alt~="logo-small"] {
   position:absolute;
   bottom:80px;
   max-width:160px;
+  padding-top: 20px;
   width:100%;
   background-color: rgb(0, 0, 0);
 }
@@ -357,8 +358,6 @@ section .title{
   align-items:center;
 }
 
-
-
 #bottom-bar .music-player button {
   color: white;
   padding-right: 4px;
@@ -375,13 +374,13 @@ section .title{
   color:white;
   font-size: .8em;
   vertical-align: middle;
-  transition: font-size 0.2s ease-out;
+  transition: all 0.1s ease-out;
 }
 #bottom-bar .music-player button i.fa-play-circle{
   font-size: 1.8em;
   padding: 0 6px;
   vertical-align: middle;
-  transition: font-size 0.2s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 #bottom-bar .music-player .playbar a{
@@ -411,8 +410,6 @@ section .title{
   background-color: transparent;
   border: 0;
 }
-
-
 
 /* .............BOTTOM BAR regole generali DELLA PLAYBAR.................... */
 #bottom-bar .playbar{
@@ -466,7 +463,6 @@ section .title{
   opacity:1
 }
 
-
 #side-bar ul li:hover a , #info-bar li:hover a, #bottom-bar .now-playing button:hover {
   color: white;
 }
@@ -483,20 +479,24 @@ section .title{
 }
 
 #bottom-bar .music-player .buttons button:hover {
-  font-size: 1.1em;
+  transform: scale(1.4);
 }
 
 #bottom-bar .music-player button:hover i.fa-play-circle{
-  font-size: 1.6em;
+  transform: scale(.9);
 }
 
 #info-bar .menu>div.linea:target{
   display: block;
 }
 
-
 #top-bar button:hover{
   transform: scale(1.05);
+}
+
+#side-bar .song-playing .profile:hover img {
+  background-color: black;
+  filter: invert();
 }
 
 /* ......................MEDIA QUERIES................................... */
@@ -508,16 +508,8 @@ section .title{
     padding-top:5px;
   }
 
-  #side-bar ul li i.fa-plus{
-    display: none;
-  }
-
   #side-bar .main-logo{
     padding-bottom:10px;
-  }
-
-  #side-bar .fa-plus{
-    display: none;
   }
 
   #side-bar .fa-arrow-alt-circle-down{
@@ -533,9 +525,7 @@ section .title{
     max-width:35px;
   }
 
-  section.main{
-    margin-left: 50px;
-  }
+ /* elementi della sidebar cje devono essere nascosti */
   .collapse{
     display:none;
   }
@@ -549,12 +539,9 @@ section .title{
     width:25px;
   }
 
-section.main {
-  width: calc(100% - 50px);
-  margin-left: 50px!important;
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: center;
+  section.main {
+    width: calc(100% - 50px);
+    margin-left: 50px!important;
   }
 }
 
@@ -596,7 +583,6 @@ section.main {
     margin-right: 10px;
     height:auto;
     text-align: center;
-
   }
   .spotify-sections .content:nth-of-type(4) {
     margin-right:0;

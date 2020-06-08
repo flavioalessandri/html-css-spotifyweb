@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
     <meta charset="utf-8">
-
     <!-- VIEWPORT SCALE -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <!-- MY CSS -->
     <link rel="stylesheet" href="css/style.css">
-
     <title>Spotify</title>
   </head>
 
   <body>
-
     <!-- header di pagina  -->
     <header>
       <!-- Fixed header Item - Link to Premium account - Always visible -->
@@ -28,44 +22,46 @@
       </div>
     </header>
     <main >
+        <!-- ...................SIDE BAR ..............................  -->
+      <aside class="">
+        <nav id="side-bar" class="centratura">
+          <!-- .........SIDEBAR   Prima Sezione ................  -->
+          <div class="section1">
 
-      <!--     .................SIDE BAR .............................  -->
-      <nav id="side-bar" class="centratura">
+            <div class="main-logo">
+              <a href="#"><img src="img/logo.svg" alt="main-logo"></a>
+              <a href="#"><img src="img/logo-small.svg" alt="logo-small"></a>
+            </div>
 
-        <div class="section1">
-
-          <div class="main-logo">
-            <a href="#"><img src="img/logo.svg" alt="main-logo"></a>
-            <a href="#"><img src="img/logo-small.svg" alt="logo-small"></a>
+            <ul class="usersearch">
+              <li><a class="ms-search" href="#"><img src="img/home.svg" alt="home"><span class="collapse">Home</span></a></li>
+              <li><a class="ms-search" href="#"><img src="img/search.svg" alt="search"><span class="collapse">Cerca</span></a></li>
+              <li><a class="ms-search" href="#"><img src="img/libreria.svg" alt="libreria"><span class="collapse">La tua libreria</span></a></li>
+            </ul>
+            <h3 class="collapse">Playlist</h3>
+            <ul class="playlist">
+              <li><a class="ms-list" href="#"><i class=" collapse fas fa-plus"></i><span class="collapse">Crea Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+              <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
+            </ul>
           </div>
+          <!-- SIDEBAR  Seconda Sezione che segue il movimento in altezza della BOTTOMBAR.............   -->
+          <div class="section2">
+            <ul class="song-playing">
+              <li><a class="profile" href="#"><i class="far fa-arrow-alt-circle-down"></i><span class="collapse">Installa l'app</span></a></li>
+              <li><a class="profile" href="#"><img class="radius" src="img/profile.svg" alt="profile"><span class="user collapse">Jhon Doe</span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
 
-          <ul class="usersearch">
-            <li><a class="ms-search" href="#"><img src="img/home.svg" alt="home"><span class="collapse">Home</span></a></li>
-            <li><a class="ms-search" href="#"><img src="img/search.svg" alt="search"><span class="collapse">Cerca</span></a></li>
-            <li><a class="ms-search" href="#"><img src="img/libreria.svg" alt="libreria"><span class="collapse">La tua libreria</span></a></li>
-          </ul>
-          <h3 class="collapse">Playlist</h3>
-          <ul class="playlist">
-            <li><a class="ms-list" href="#"><i class="fas fa-plus"></i><span class="collapse">Crea Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-            <li><a class="ms-list" href="#"><span class="collapse">Nome Playlist</span></a></li>
-          </ul>
-        </div>
-
-        <div class="section2">
-          <ul class="song-playing">
-            <li><a class="profile" href="#"><i class="far fa-arrow-alt-circle-down"></i><span class="collapse">Installa l'app</span></a></li>
-            <li><a class="profile" href="#"><img class="radius" src="img/profile.svg" alt="profile"><span class="user collapse">Jhon Doe</span></a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <!--       parte principale dei contenuti            -->
+      <!--     .............MAIN SEZIONE PRINCIPALE CONTENUTI..........................    -->
+        <!--     .............Prima Sezione - MENU..........................    -->
 
       <section class="main centratura">
         <nav>
@@ -98,6 +94,7 @@
         </nav>
       </section>
 
+      <!--     ..........Seconda Sezione Recently Played............    -->
       <section class="main centratura">
         <h2 class="title">Recently Played</h2>
         <div id="recently-played" class="spotify-sections">
@@ -116,7 +113,7 @@
               <img src="img/stranger.jpeg" alt="stranger">
               <a href="#"><i class="project-overlay far fa-play-circle"></i></a>
             </div>
-            <h3><a href="#">Stranger Things Vol.1 &lpar;a Netflix original Series Soundtrack&rpar;</a></h3>
+            <h3><a href="#">Stranger Things Vol&#46;1 &lpar;a Netflix original Series Soundtrack&rpar;</a></h3>
             <h4>Kyle Dixon & Michael Stern</h4>
           </div>
 
@@ -160,9 +157,10 @@
         </div>
       </section>
 
+        <!--     ..........Terza Sezione Creato Per............    -->
       <section class="main centratura">
         <h2 class="title">Creato per Jhon Doe</h2>
-        <p class="title">Piu ascolti piu accurati saranno i suggerimenti</p>
+        <p class="title">Pi&ugrave; ascolti Pi&ugrave; accurati saranno i suggerimenti</p>
         <div id="suggested-artist" class="spotify-sections">
 
           <div class="content">
@@ -184,9 +182,10 @@
         </div>
       </section>
 
+      <!--     ..........Quarta Sezione Artisti Pi&ugrave; popolari............    -->
       <section class="main centratura">
-        <h2 class="title">Artisti piu popolari</h2>
-        <p class="title">Piu ascolti piu accurati saranno i suggerimenti</p>
+        <h2 class="title">Artisti Pi&ugrave; popolari</h2>
+        <p class="title">Pi&ugrave; ascolti Pi&ugrave; accurati saranno i suggerimenti</p>
         <div id="popular-artist" class="spotify-sections">
 
           <div class="content">
@@ -214,6 +213,7 @@
     <footer>
       <div id="bottom-bar">
 
+        <!--    ...........Prima Sezione NOW-PLAYING................  -->
         <div class="now-playing centratura">
           <div class="img-cover">
             <img src="img/sinister.jpeg" alt="sinister">
@@ -225,10 +225,10 @@
           <div>
             <button type="button" name="heart"><i class="far fa-heart"></i></button>
             <button type="button" name="folder"><i class="far fa-folder"></i></button>
-
           </div>
         </div>
 
+        <!--    ...........Seconda Sezione MUSIC-PLAYER................  -->
         <div class="music-player">
           <div class="buttons">
             <button type="button" name="button"><i class="fas fa-random"></i></button>
@@ -246,7 +246,7 @@
             <span><a href="#">4:25</a></span>
           </div>
         </div>
-
+        <!--    ...........Terza Sezione AUDIO-SETTINGS................  -->
         <div class="audio-settings centratura">
           <button type="button" name="button"><i class="fas fa-sliders-h"></i></button>
           <button type="button" name="button"><i class="fas fa-tv"></i></button>
@@ -260,14 +260,6 @@
         </div>
 
       </div>
-
-
-
     </footer>
-
-
-
-
-
   </body>
 </html>
