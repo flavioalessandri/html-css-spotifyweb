@@ -480,6 +480,33 @@ section .title{
 
 /* .......MEDIA QUERY XS................................................ */
 
+@media all and (min-width:0px) and (max-width:320px){
+  #bottom-bar .audio-settings{
+    min-width: 90px!important;
+  }
+
+  #bottom-bar .music-player{
+    min-width:90px!important;
+  }
+
+  #bottom-bar .music-player button {
+    padding-right: 2px!important;
+    padding-bottom: 5px!important;
+  }
+
+  #bottom-bar .music-player i.fa-play-circle{
+    padding: 0 2px!important;
+  }
+
+  #bottom-bar .now-playing {
+    margin-right: 0px!important;
+}
+
+
+}
+
+
+
 @media all and (max-width:575px) {
 
 
@@ -535,6 +562,10 @@ section.main {
   border: 1px solid black;
   }
 
+  #bottom-bar .audio-settings {
+    min-width: 90px;
+}
+
 }
 
 /* .......MEDIA QUERY SM.................................................... */
@@ -561,9 +592,9 @@ section.main {
   }
 
 
-  #bottom-bar .now-playing{
+  /* #bottom-bar .now-playing{
     margin-right: 20px;
-  }
+  } */
 
 }
 
