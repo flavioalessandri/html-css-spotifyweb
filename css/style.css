@@ -6,7 +6,7 @@
 }
 
 body{
-  background-color: rgb(35, 39, 47);
+  background-color:black;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   width:100%;
@@ -24,7 +24,7 @@ body{
 h2{
   color:white;
   padding: 15px 0;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 700;
 }
 
@@ -55,15 +55,17 @@ p {
 /* ............................TOP BAR.............................  */
 #top-bar{
   position: fixed;
+  padding-right: 10px;
   top:0;
-  left:180px;
+  right: 0;
   width: calc(100% - 180px);
   height:80px;
-  z-index: 800;
+  z-index: 100;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: rgba(24, 24, 33,1);
+  overflow-y: hidden;
 }
 
 #top-bar button{
@@ -77,30 +79,27 @@ p {
 
 /* ...............................SIDEBAR ................................. */
 #side-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  float: left;
   width: 180px;
-  height: 100vh;
+  height:calc(100vh - 80px);
   z-index: 980;
-  padding-top: 25px;
   background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: nowrap;
 }
 
-/* #side-bar{
-  position: fixed;
-  top:0;
-  left:0;
-  width:180px;
-  height: 100%;
-  z-index: 980;
-  padding-top:25px;
-  background-color: rgb(0, 0, 0);
-} */
+#side-bar .song-playing{
+  align-self: flex-end;
+}
+
+#side-bar .playlist.scroll{
+  overflow-y: hidden;
+  height:calc(100vh / 3);
+  }
+
 
 #side-bar a {
   color:#75787c;
@@ -119,6 +118,7 @@ img[alt~="logo-small"] {
 }
 
 #side-bar .main-logo{
+  padding-top:20px;
   padding-bottom:30px;
 }
 
@@ -166,19 +166,6 @@ img[alt~="logo-small"] {
   vertical-align: middle;
 }
 
-
-#side-bar .section1 .scroll{
-overflow-y: hidden;
-height:calc(100vh / 3);
-}
-
-#side-bar .section2{
-  padding-bottom:80px;
-  max-width:160px;
-  width:100%;
-  background-color: rgb(0, 0, 0);
-}
-
 #side-bar ul.song-playing li:last-of-type{
   border-top: 1px solid white;
   padding-top: 5px;
@@ -198,28 +185,19 @@ height:calc(100vh / 3);
   font-size: 1.2em;
 }
 
-/* - SEZIONE CONTENUTO MAIN........... ................................... */
-section:first-of-type{
-  margin-top: 80px;
-}
-
-section.main{
-  width: calc(100vw - 180px);
-  max-width: 1600px;
-  margin-left: 180px;
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: center;
-}
-
-/* altezza dell'ultima sezione maggiorata della dimensione della BOTTOM BAR */
-#popular-artist >div:last-of-type{
-  height:calc(100% + 80px);
-}
-
 /* - SEZIONE CONTENUTO MAIN................INFOBAR.................... */
+
+#main-section{
+  width:calc(100% - 180px);
+  float: left;
+  overflow-y: scroll;
+  height: calc(100vh - 80px);
+  background-color:rgb(35, 39, 47);
+}
+
 #info-bar{
-  width:100%;;
+  padding-top: 80px;
+  width:100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -256,34 +234,17 @@ section.main{
 }
 
 /* SEZIONE CONTENUTO MAIN............................. PAGINA SPOTIFY */
-section .title{
-  width: 100%;
-  text-align: left;
-}
 
 #recently-played , #suggested-artist , #popular-artist {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  justify-content:flex-start;
+  flex-wrap: wrap;
   width:100%;
 }
 
-.spotify-sections .content{
-  width: calc((100% - (10px * 5)) / 6);
-  margin-right: 10px;
-  min-width: 160px;
-  height:auto;
+.spotify-sections .content {
+  width: calc(100% / 6);
   text-align: center;
-}
-
-/* elemento  utilizzato per riempire spazi vuoti delle righe a dx */
- #suggested-artist::after , #popular-artist::after{
-  content:"";
-  min-width: calc((100% / 6) * 4);;
-}
-
-.spotify-sections .content:last-of-type {
-  margin-right:0;
 }
 
 /* SEZIONE CONTENUTO MAIN.........................STILI IMMAGINI */
@@ -291,29 +252,31 @@ section .title{
   border-radius: 50%;
 }
 
-.spotify-sections .content .img-cover img{
-  width: 100%;
-  height: auto;
-}
-
+/*....SEZIONE IMMAGINI DELLA SEZIONE SPOTIFY..................... */
 .img-cover.overlay {
   position: relative;
-  max-width: 100%;
+   width: 94%;
+  max-width: 180px;
+}
+
+.spotify-sections .content .img-cover img{
+  width: 100%;
+  max-width: 180px;
+  height: auto;
 }
 
 .project-overlay {
   font-size: 4.5em;
-  line-height: 100%;
+  line-height: 1em;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
   background-color: rgb(0, 0, 0,0.4);
   opacity:0;
   color: #fff;
-  padding: 38%;
+  padding: 35%;
   transition: 0.3s ease-in-out;
+  transform: translate(-50% ,-50%);
 }
 
 /* .............BOTTOM BAR..................................... */
@@ -334,7 +297,7 @@ section .title{
 /* .............BOTTOM BAR / SEZ NOW-PLAYING................ */
 #bottom-bar .now-playing{
   padding-right: 0;
-  width: 180px;
+  max-width: 180px;
   height:50px;
   display:flex;
   justify-content: space-between;
@@ -365,7 +328,6 @@ section .title{
   color: #75787c;
   padding:2px 6px;
 }
-
 
 /* ..........BOTTOM BAR /  MUSIC-PLAYER.......................... */
 #bottom-bar .music-player{
@@ -519,20 +481,46 @@ section .title{
 }
 
 /* ......................MEDIA QUERIES................................... */
+
+@media all  and (max-width:340px){
+
+  .spotify-sections .content {
+    width: 80%!important;
+    text-align: center;
+  }
+
+  .img-cover.overlay {
+    position: relative;
+    width: 94%;
+    max-width: 200px!important;
+  }
+
+  .spotify-sections .content .img-cover img{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+}
+/* .............MEDIA QUERY XS................................... */
 @media all and (max-width:575px) {
 
   #top-bar{
-    width:calc(100% - 50px);
-    left:50px;
+    width:calc(100% - 45px);
+    right:0;
+  }
+
+  #main-section{
+    width:calc(100% - 45px)!important;
   }
 
 /* nuove dimensioni della SideBar */
   #side-bar{
-    width:50px!important;
+    width:45px!important;
     padding-top:5px;
   }
 
   #side-bar .main-logo{
+    padding-top:20px;
     padding-bottom:10px;
   }
 
@@ -545,11 +533,7 @@ section .title{
     border-top: 0;
   }
 
-  #side-bar .section2{
-    max-width:35px;
-  }
-
- /* elementi della sidebar cje devono essere nascosti */
+ /* elementi della sidebar che devono essere nascosti */
   .collapse{
     display:none;
   }
@@ -562,77 +546,35 @@ section .title{
     display:block;
     width:25px;
   }
-
-  section.main {
-    width: calc(100% - 50px);
-    margin-left: 50px!important;
-  }
-
 }
 
 /* .......MEDIA QUERY SM.................................................... */
 @media all  and (max-width:767px){
 
-  #recently-played , #suggested-artist , #popular-artist {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    width:100vw;
-  }
-  .spotify-sections .content{
-    width: calc((100% - (10px * 1)) / 2);
-    margin-right: 10px;
-    min-width: 60px;
-    height:auto;
+  .spotify-sections .content {
+    width: calc(100% / 2);
     text-align: center;
   }
-  .spotify-sections .content:nth-of-type(even) {
-    margin-right:0;
+
+  .img-cover.overlay {
+    position: relative;
+    width: 94%;
+    max-width: 400px;
   }
 
+  .spotify-sections .content .img-cover img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
 
 }
 
 /* ......................MEDIA QUERY MD .................................*/
 @media all and (min-width:768px) and (max-width:992px){
 
-  #recently-played , #suggested-artist , #popular-artist {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    width:100%;
-  }
-  .spotify-sections .content{
-    width: calc((100% - (10px * 3)) / 4);
-    min-width:90px!important;
-    margin-right: 10px;
-    height:auto;
-    text-align: center;
-  }
-  .spotify-sections .content:nth-of-type(4) {
-    margin-right:0;
-  }
-
-}
-
-/* ......................MEDIA QUERY LG....................................*/
-@media all and (min-width:993px) and (max-width:3000px) {
-
-  #recently-played , #suggested-artist , #popular-artist {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    width:100%;
-  }
-
-  .spotify-sections .content{
-    width: calc((100% - (10px * 5)) / 6);
-    margin-right: 10px;
-    max-width: 220px;
-    min-width:90px!important;
-    height:auto;
+  .spotify-sections .content {
+    width: calc(100% / 4);
     text-align: center;
   }
 }
@@ -640,16 +582,18 @@ section .title{
 /* ......................MEDIA QUERY ALTEZZE....................................*/
 @media all and (max-height:570px) {
 
-#side-bar .section1 .scroll{
-  overflow-y: scroll!important;
-  height:calc((100vh - 80px ) / 3);
+
+/* rendi visibile scrollbar della SIDEBAR per H inferiori a 576PX */
+  #side-bar .playlist.scroll{
+    overflow-y: scroll;
+    height:calc(100vh / 3);
+  }
 }
 
 /* ......................MEDIA QUERY ALTEZZE....................................*/
-@media all and (max-height:135px) {
+@media all and (max-height:80px) {
   #top-bar{
     z-index: 1000;
     background-color: rgba(24, 24, 33,.4);
   }
-
 }
