@@ -1,0 +1,663 @@
+/* INIZIO REGOLE GENERALI */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  width:100%;
+  height:100vh;
+  color:#063653;
+}
+
+.bg-image{
+  position:absolute;
+  background: url("../img/ruined.jpg");
+  filter: sepia(.2) opacity(.2);
+  background-size: cover;
+  width:100%;
+  height:100%;
+  z-index: -1;
+
+}
+
+
+/* - PADDING GENERALI */
+.centratura{
+  padding-right:10px;
+  padding-left: 10px;
+}
+
+/* STILE GENERALE TESTI */
+h2{
+  color:#063653;
+  padding: 15px 0;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+h3, .spotify-sections h3> a{
+  color:#3A8CAA;
+  padding: 15px 0;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+#side-bar h3{
+  color:white;
+}
+
+h4{
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color:#063653;
+}
+
+.now-playing a {
+  text-decoration: none;
+  color:#3A8CAA;
+}
+
+p {
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+/* ...............................SIDEBAR ................................. */
+#side-bar {
+  float: left;
+  width: 180px;
+  height:calc(100vh - 80px);
+  z-index: 980;
+  background-image: linear-gradient(#6bbddb, #3a8caa);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+#side-bar .song-playing{
+  align-self: flex-end;
+}
+
+#side-bar .playlist.scroll{
+  overflow-y: hidden;
+  height:calc(100vh / 3);
+}
+
+#side-bar a {
+  color:#063653;
+  font-size: .9em;
+  font-weight: 500;
+}
+
+#side-bar ul.playlist >li:first-of-type a {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* SIDEBAR ......................Sezione immagini ....................*/
+img[alt~="logo-small"] {
+  display:none;
+}
+
+#side-bar .main-logo{
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+#side-bar .main-logo img{
+  height: 35px;
+}
+
+#side-bar .usersearch img , #side-bar .playlist img {
+  width:25px;
+  height: auto;
+  vertical-align: middle;
+}
+
+#side-bar .song-playing .profile img {
+  width:20px;
+  background-color: #063653;
+  vertical-align: middle;
+}
+
+.radius{
+  border-radius: 50%;
+}
+
+/* SIDEBAR ......................Stile lista .................... */
+#side-bar ul{
+  width:100%;
+  padding:0;
+}
+
+#side-bar ul li{
+  line-height: 2.4em;
+  list-style-type: none;
+  width:100%;
+}
+
+/* simbolo del + della sidebar */
+#side-bar ul li i.fa-plus{
+  width:30px;
+  height:30px;
+  color:black;
+  font-size: 1.2em;
+  padding: 7px 8px;
+  margin-right: 8px;
+  background-color: #063653;
+  vertical-align: middle;
+}
+
+#side-bar ul.song-playing li:last-of-type{
+  border-top: 1px solid white;
+  padding-top: 5px;
+}
+
+#side-bar ul.song-playing li span{
+  padding-left: 15px;
+}
+
+#side-bar .fa-arrow-alt-circle-down{
+  font-size: 1.2em;
+}
+
+#side-bar ul.song-playing li:last-of-type span{
+  color: white;
+  font-size: 1.2em;
+}
+
+/* - ..............SEZIONE CONTENUTO MAIN................................... */
+/* ............................TOP BAR.............................  */
+
+/*  TOP-BAR fixed height */
+#top-bar{
+  width:calc(100vw - 180px);
+  height:80px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color:#073D5E;
+  overflow-y: hidden;
+}
+
+#top-bar button{
+  font-size: 10px;
+  padding: 10px 35px;
+  border:1px solid white;
+  color:white;
+  border-radius:20px;
+  background-color: transparent;
+}
+
+/* come creare barra superiore senza POSITION FIXED */
+/* contenitore per rendere main-section content in overflow e bloccare la top-bar */
+.content-wrapper {
+  width:100%;
+  display: flex;
+  flex: 1;
+  min-height: 0px; /* IMPORTANT: you need this for non-chrome browsers */
+}
+/* contenitore del contenuto overflowed */
+.overflow-container {
+  flex: 1;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+}
+/* il contenuto in overflow */
+.overflow-content {
+  height: 100vh;
+
+}
+
+
+/* MAIN-SECTION a container with flex-direction column */
+#main-section{
+  display: flex;
+  flex-direction: column;
+  width:calc(100% - 180px);
+  float: left;
+  height: calc(100vh - 80px);
+}
+/* ............................INFOBAR.............................  */
+#nav-bar{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height:60px;
+}
+
+/* centratura del testo con linea verde sottostante */
+#nav-bar .menu{
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-bar .menu>div.linea{
+  display: none;
+  width:30px;
+  height: 2px;
+  border-radius: 3px;
+  background-color: #99faff;
+
+}
+
+#nav-bar .menu a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav-bar a {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: .8em;
+  font-weight: 400;
+  color:#063653;
+}
+
+/* SEZIONE CONTENUTO MAIN............................. PAGINA SPOTIFY */
+#recently-played , #suggested-artist , #popular-artist {
+  display: flex;
+  justify-content:flex-start;
+  flex-wrap: nowrap;
+  width:100%;
+}
+
+.spotify-sections .content {
+  width: 190px;
+  text-align: center;
+  margin-right:10px;
+}
+
+
+/* SEZIONE CONTENUTO MAIN.........................STILI IMMAGINI */
+.spotify-sections .content .img-cover img{
+  box-shadow: 0px 0px 8px lightgrey;
+  border-radius: 50%;
+}
+
+/*....SEZIONE IMMAGINI DELLA SEZIONE SPOTIFY..................... */
+.img-cover.overlay {
+  position: relative;
+}
+
+.spotify-sections .content .img-cover img{
+  width: 190px;
+  transition: filter 0.3s ease-in-out;
+}
+
+.project-overlay {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity:0;
+  color: #fff;
+  transition: opacity .3s ease-in-out , transform .5s ease-in-out ;
+
+  transform: translate(-50% ,-50%) rotate(-40deg);
+}
+
+/* .............BOTTOM BAR..................................... */
+#bottom-bar{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 80px;
+  z-index: 999;
+  display: flex;
+  flex-flow:row;
+  justify-content: space-between;
+  align-items:center;
+  background-color: #073D5E;
+}
+
+/* .............BOTTOM BAR / SEZ NOW-PLAYING................ */
+#bottom-bar .now-playing{
+  padding-right: 0;
+  max-width: 180px;
+  height:50px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+#bottom-bar .now-playing>div:first-of-type{
+  min-width: 35px;
+}
+
+#bottom-bar .now-playing img{
+  width:30px;
+  height:auto;
+  vertical-align: middle;
+}
+
+#bottom-bar .now-playing h3{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#bottom-bar .now-playing h3 a{
+  font-size: 0.85em;
+  color: white;
+}
+
+#bottom-bar .now-playing button{
+  color: #6EB4CD;
+  padding:2px 6px;
+}
+
+/* ..........BOTTOM BAR /  MUSIC-PLAYER.......................... */
+#bottom-bar .music-player{
+  width: 30%;
+  min-width:100px;
+  display: flex;
+  flex-flow:column;
+  justify-content:center;
+  align-items:center;
+}
+
+#bottom-bar .music-player button {
+  color: white;
+  padding-right: 4px;
+}
+#bottom-bar .music-player button:last-of-type{
+  padding-right: 0;
+}
+
+#bottom-bar .music-player .buttons{
+  height:30px;
+}
+
+#bottom-bar .music-player button{
+  color:white;
+  font-size: .8em;
+  vertical-align: middle;
+  transition: all 0.1s ease-out;
+}
+#bottom-bar .music-player button i.fa-play-circle{
+  font-size: 1.8em;
+  padding: 0 6px;
+  vertical-align: middle;
+  transition: all 0.1s ease-out;
+}
+
+#bottom-bar .music-player .playbar a{
+  color:white;
+  font-size: .7em;
+  vertical-align: middle;
+}
+
+/* ...........BOTTOM BAR /  AUDIO-SETTINGS.............................. */
+#bottom-bar .audio-settings{
+  padding-left: 10px;
+  width:180px;
+  min-width: 90px;
+  display:flex;
+  justify-content: space-between;
+}
+
+#bottom-bar .audio-settings button {
+  color:white;
+  font-size: 0.75em;
+  vertical-align: middle;
+  padding-right: 8px;
+}
+
+/* .............BOTTOM BAR regole generali............................... */
+#bottom-bar button {
+  background-color: transparent;
+  border: 0;
+}
+
+/* .............BOTTOM BAR regole generali DELLA PLAYBAR.................... */
+#bottom-bar .playbar{
+  width:100%;
+  display: flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+}
+
+#bottom-bar .playbar .playbar-bg{
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  border-radius: 3px;
+  background-color: #5a5a5a;
+  margin: 0 5px;
+}
+
+#bottom-bar .playbar .playbar-bg .playbar-line{
+  position: absolute;
+  left:0px;
+  width:40%;
+  height:4px;
+  border-radius: 3px;
+  background-color: #c1c1c1;
+}
+
+#bottom-bar .music-player .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  color: #c1c1c1;
+  right:60%;
+  line-height: 4px;
+}
+
+#bottom-bar .audio-settings .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 10px;
+  color: #c1c1c1;
+  right:60%;
+  line-height: 3px;
+}
+
+/* .............SEZIONE GENERALE HOVER .............................. */
+.img-cover.overlay:hover .project-overlay{
+  transform: translate(-50% ,-50%) rotate(0deg);
+  opacity:1;
+}
+
+
+.spotify-sections .content .img-cover:hover img{
+  filter: brightness(40%);
+}
+
+#side-bar ul li:hover a , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
+  color: white;
+}
+#side-bar ul li:hover i.fa-plus{
+  background-color: white;
+}
+
+#bottom-bar .music-player .playbar:hover .fa-circle,
+#bottom-bar .audio-settings .playbar:hover .fa-circle{
+  display: block;
+}
+#bottom-bar .music-player .playbar:hover .playbar-bg .playbar-line{
+  background-color: #99faff;
+}
+
+#bottom-bar .music-player .buttons button:hover {
+  transform: scale(1.4);
+}
+
+#bottom-bar .music-player button:hover i.fa-play-circle{
+  transform: scale(.9);
+}
+
+#nav-bar .menu>div.linea:target{
+  display: block;
+}
+
+#top-bar button:hover{
+  transform: scale(1.05);
+}
+
+#side-bar .song-playing .profile:hover img {
+  background-color: black;
+  filter: invert(100%);
+}
+
+/* ......................MEDIA QUERIES................................... */
+
+@media all  and (max-width:320px){
+
+  #nav-bar{
+    height:100%!important;
+  }
+
+  #recently-played , #suggested-artist , #popular-artist {
+    flex-wrap: wrap!important;
+  }
+
+  .spotify-sections .content {
+    width: 100%!important;
+    text-align: center;
+    margin-right:0px;
+  }
+  .spotify-sections .content .img-cover img{
+    max-width: 250px;
+  }
+}
+/* .............MEDIA QUERY XS................................... */
+@media all and (max-width:575px) {
+
+  #top-bar{
+    width:calc(100vw - 45px);
+    right:0;
+  }
+
+  #main-section{
+    width:calc(100% - 45px)!important;
+  }
+
+/* nuove dimensioni della SideBar */
+  #side-bar{
+    width:45px!important;
+    padding-top:5px;
+  }
+
+  #side-bar .main-logo{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
+
+  #side-bar .fa-arrow-alt-circle-down{
+    font-size: 1.2em;
+    padding-left: 4px;
+  }
+
+  #side-bar ul.song-playing li:last-of-type{
+    border-top: 0;
+  }
+
+ /* elementi della sidebar che devono essere nascosti */
+  .collapse{
+    display:none;
+  }
+
+  img[alt~="main-logo"] {
+    display:none;
+  }
+
+  img[alt~="logo-small"] {
+    display:block;
+    width:25px;
+  }
+}
+
+/* .......MEDIA QUERY SM.................................................... */
+@media all  and (max-width:767px){
+
+  /* .spotify-sections .content {
+    width: calc(100% / 2);
+    text-align: center;
+  }
+
+  .spotify-sections .content .img-cover img{
+    max-width: 400px;
+  } */
+}
+
+/* ......................MEDIA QUERY MD .................................*/
+@media all and (min-width:768px) and (max-width:992px){
+
+  /* .spotify-sections .content {
+    width: calc(100% / 4);
+    text-align: center;
+  } */
+}
+
+/* ......................MEDIA QUERY MD .................................*/
+@media all and (min-width:1200px) {
+
+  .overflow-container {
+    overflow-x: hidden;
+  }
+
+}
+
+/* ......................MEDIA QUERY MD .................................*/
+@media all and (min-width:1405px) {
+
+  .overflow-container {
+    overflow-x: hidden;
+  }
+
+  .spotify-sections .content {
+    width: calc(100% / 6);
+    text-align: center;
+  }
+
+  .spotify-sections .content .img-cover img{
+    width: 95%;
+    transition: filter 0.3s ease-in-out;
+  }
+
+}
+
+
+
+/* ......................MEDIA QUERY ALTEZZE....................................*/
+@media all and (max-height:570px) {
+
+/* rendi visibile scrollbar della SIDEBAR per H inferiori a 576PX */
+  #side-bar .playlist.scroll{
+    overflow-y: scroll;
+    height:calc(100vh / 3);
+    scrollbar-width: thin;
+  }
+}
+
+/* ......................MEDIA QUERY ALTEZZE....................................*/
+@media all and (max-height:80px) {
+  #top-bar{
+    z-index: 1000;
+    background-color: rgba(24, 24, 33,.4);
+  }
+}
