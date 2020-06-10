@@ -77,7 +77,7 @@ p {
 
 #side-bar a {
   color:#75787c;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 500;
 }
 
@@ -226,12 +226,17 @@ img[alt~="logo-small"] {
 }
 
 #nav-bar .menu>div.linea{
-  display: none;
+  display: block;
   width:30px;
   height: 2px;
   border-radius: 3px;
   background-color: rgb(173, 255, 47);
 }
+
+#nav-bar .menu>div.linea:not(:first-child){
+  display: none;
+}
+
 
 #nav-bar .menu a{
   text-decoration: none;
@@ -242,7 +247,7 @@ img[alt~="logo-small"] {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 5px;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 400;
   color:#75787c;
 }
@@ -283,8 +288,8 @@ img[alt~="logo-small"] {
   top: 50%;
   left: 50%;
   opacity:0;
-  color: #fff;
-  transition: 0.4s ease-in-out;
+  color: transparent;
+  transition: all 0.4s ease-in-out;
   transform: translate(-50% ,-50%);
 }
 
@@ -363,7 +368,7 @@ img[alt~="logo-small"] {
 
 #bottom-bar .music-player button{
   color:white;
-  font-size: .8em;
+  font-size: 0.8em;
   vertical-align: middle;
   transition: all 0.1s ease-out;
 }
@@ -376,7 +381,7 @@ img[alt~="logo-small"] {
 
 #bottom-bar .music-player .playbar a{
   color:white;
-  font-size: .7em;
+  font-size: 0.7em;
   vertical-align: middle;
 }
 
@@ -451,7 +456,8 @@ img[alt~="logo-small"] {
 
 /* .............SEZIONE GENERALE HOVER .............................. */
 .img-cover.overlay:hover .project-overlay{
-  opacity:1
+  color:white;
+  opacity:1;
 }
 
 .spotify-sections .content .img-cover:hover img{

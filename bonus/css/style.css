@@ -263,13 +263,16 @@ img[alt~="logo-small"] {
 }
 
 #nav-bar .menu>div.linea{
-  display: none;
   width:30px;
   height: 2px;
   border-radius: 3px;
   background-color: #99faff;
-
 }
+#nav-bar .menu>div.linea:not(:first-child){
+  display: none;
+}
+
+
 
 #nav-bar .menu a{
   text-decoration: none;
