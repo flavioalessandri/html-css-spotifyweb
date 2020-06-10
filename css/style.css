@@ -44,37 +44,12 @@ h4{
 a {
   text-decoration: none;
   color:rgb(101, 104, 113);
-
 }
+
 p {
   padding-bottom: 15px;
   font-size: .9em;
   font-weight: 600;
-}
-
-/* ............................TOP BAR.............................  */
-#top-bar{
-  position: fixed;
-  padding-right: 10px;
-  top:0;
-  right: 0;
-  width: calc(100% - 180px);
-  height:80px;
-  z-index: 100;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: rgba(24, 24, 33,1);
-  overflow-y: hidden;
-}
-
-#top-bar button{
-  font-size: 10px;
-  padding: 10px 35px;
-  border:1px solid white;
-  color:white;
-  border-radius:20px;
-  background-color: transparent;
 }
 
 /* ...............................SIDEBAR ................................. */
@@ -98,8 +73,7 @@ p {
 #side-bar .playlist.scroll{
   overflow-y: hidden;
   height:calc(100vh / 3);
-  }
-
+}
 
 #side-bar a {
   color:#75787c;
@@ -149,9 +123,9 @@ img[alt~="logo-small"] {
 }
 
 #side-bar ul li{
-  padding-bottom: 10px;
+  line-height: 2em;
   list-style-type: none;
-  width:100%
+  width:100%;
 }
 
 /* simbolo del + della sidebar */
@@ -169,7 +143,6 @@ img[alt~="logo-small"] {
 #side-bar ul.song-playing li:last-of-type{
   border-top: 1px solid white;
   padding-top: 5px;
-  width:160px;
 }
 
 #side-bar ul.song-playing li span{
@@ -185,25 +158,66 @@ img[alt~="logo-small"] {
   font-size: 1.2em;
 }
 
-/* - SEZIONE CONTENUTO MAIN................INFOBAR.................... */
+/* - ..............SEZIONE CONTENUTO MAIN................................... */
+/* ............................TOP BAR.............................  */
 
+/*  TOP-BAR fixed height */
+#top-bar{
+  width:calc(100vw - 180px);
+  height:80px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(24, 24, 33,1);
+  overflow-y: hidden;
+}
+
+#top-bar button{
+  font-size: 10px;
+  padding: 10px 35px;
+  border:1px solid white;
+  color:white;
+  border-radius:20px;
+  background-color: transparent;
+}
+
+/* come creare barra superiore senza POSITION FIXED */
+/* contenitore per rendere main-section content in overflow e bloccare la top-bar */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  min-height: 0px; /* IMPORTANT: you need this for non-chrome browsers */
+}
+/* contenitore del contenuto overflowed */
+.overflow-container {
+  flex: 1;
+  overflow: auto;
+}
+/* il contenuto in overflow */
+.overflow-content {
+  height: 100vh;
+}
+
+/* MAIN-SECTION a container with flex-direction column */
 #main-section{
+  display: flex;
+  flex-direction: column;
   width:calc(100% - 180px);
   float: left;
-  overflow-y: scroll;
   height: calc(100vh - 80px);
   background-color:rgb(35, 39, 47);
 }
-
-#info-bar{
-  padding-top: 80px;
+/* ............................INFOBAR.............................  */
+#nav-bar{
   width:100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#info-bar .menu{
+/* centratura del testo con linea verde sottostante */
+#nav-bar .menu{
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -211,7 +225,7 @@ img[alt~="logo-small"] {
   align-items: center;
 }
 
-#info-bar .menu>div.linea{
+#nav-bar .menu>div.linea{
   display: none;
   width:30px;
   height: 2px;
@@ -219,12 +233,12 @@ img[alt~="logo-small"] {
   background-color: rgb(173, 255, 47);
 }
 
-#info-bar .menu a{
+#nav-bar .menu a{
   text-decoration: none;
   font-weight: bold;
 }
 
-#info-bar a {
+#nav-bar a {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 5px;
@@ -234,7 +248,6 @@ img[alt~="logo-small"] {
 }
 
 /* SEZIONE CONTENUTO MAIN............................. PAGINA SPOTIFY */
-
 #recently-played , #suggested-artist , #popular-artist {
   display: flex;
   justify-content:flex-start;
@@ -255,14 +268,13 @@ img[alt~="logo-small"] {
 /*....SEZIONE IMMAGINI DELLA SEZIONE SPOTIFY..................... */
 .img-cover.overlay {
   position: relative;
-   width: 94%;
-  max-width: 180px;
 }
 
 .spotify-sections .content .img-cover img{
-  width: 100%;
+  width: 95%;
   max-width: 180px;
   height: auto;
+  transition: filter 0.3s ease-in-out;
 }
 
 .project-overlay {
@@ -271,11 +283,10 @@ img[alt~="logo-small"] {
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: rgb(0, 0, 0,0.4);
   opacity:0;
   color: #fff;
   padding: 35%;
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
   transform: translate(-50% ,-50%);
 }
 
@@ -415,7 +426,7 @@ img[alt~="logo-small"] {
 #bottom-bar .playbar .playbar-bg .playbar-line{
   position: absolute;
   left:0px;
-  width:70%;
+  width:40%;
   height:4px;
   border-radius: 3px;
   background-color: #c1c1c1;
@@ -426,7 +437,7 @@ img[alt~="logo-small"] {
   display: none;
   font-size: 12px;
   color: #c1c1c1;
-  right:30%;
+  right:60%;
   line-height: 4px;
 }
 
@@ -435,7 +446,7 @@ img[alt~="logo-small"] {
   display: none;
   font-size: 10px;
   color: #c1c1c1;
-  right:30%;
+  right:60%;
   line-height: 3px;
 }
 
@@ -444,7 +455,11 @@ img[alt~="logo-small"] {
   opacity:1
 }
 
-#side-bar ul li:hover a , #info-bar li:hover a, #bottom-bar .now-playing button:hover {
+.spotify-sections .content .img-cover:hover img{
+  filter: brightness(40%);
+}
+
+#side-bar ul li:hover a , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
   color: white;
 }
 #side-bar ul li:hover i.fa-plus{
@@ -467,7 +482,7 @@ img[alt~="logo-small"] {
   transform: scale(.9);
 }
 
-#info-bar .menu>div.linea:target{
+#nav-bar .menu>div.linea:target{
   display: block;
 }
 
@@ -482,30 +497,21 @@ img[alt~="logo-small"] {
 
 /* ......................MEDIA QUERIES................................... */
 
-@media all  and (max-width:340px){
+@media all  and (max-width:320px){
 
   .spotify-sections .content {
-    width: 80%!important;
+    width: 100%!important;
     text-align: center;
   }
-
-  .img-cover.overlay {
-    position: relative;
-    width: 94%;
-    max-width: 200px!important;
-  }
-
   .spotify-sections .content .img-cover img{
-    width: 100%;
-    max-width: 200px;
-    height: auto;
+    max-width: 250px;
   }
 }
 /* .............MEDIA QUERY XS................................... */
 @media all and (max-width:575px) {
 
   #top-bar{
-    width:calc(100% - 45px);
+    width:calc(100vw - 45px);
     right:0;
   }
 
@@ -556,18 +562,9 @@ img[alt~="logo-small"] {
     text-align: center;
   }
 
-  .img-cover.overlay {
-    position: relative;
-    width: 94%;
-    max-width: 400px;
-  }
-
   .spotify-sections .content .img-cover img{
-    width: 100%;
     max-width: 400px;
-    height: auto;
   }
-
 }
 
 /* ......................MEDIA QUERY MD .................................*/
@@ -581,7 +578,6 @@ img[alt~="logo-small"] {
 
 /* ......................MEDIA QUERY ALTEZZE....................................*/
 @media all and (max-height:570px) {
-
 
 /* rendi visibile scrollbar della SIDEBAR per H inferiori a 576PX */
   #side-bar .playlist.scroll{
