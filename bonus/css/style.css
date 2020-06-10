@@ -123,13 +123,14 @@ img[alt~="logo-small"] {
 
 #side-bar .main-logo img{
   height: 35px;
-  animation: zoom-anim 3s infinite;
+  animation: zoom-anim 2.5s infinite;
 }
 
 @keyframes zoom-anim{
-  0% {transform: scale(1);}
-  50% {transform: scale(1.1);}
-  0% {transform: scale(1);}
+  0% {transform: scale(1);filter: invert(0);}
+  20% {transform: scale(1.1);filter: invert(.8);}
+  70% {transform: scale(1.1);filter: invert(.8);}
+  0% {transform: scale(1);filter: invert(0);}
 }
 
 #side-bar .usersearch img , #side-bar .playlist img {
@@ -499,8 +500,6 @@ img[alt~="logo-small"] {
   transform: scale(1.2);
 }
 
-
-
 main section:first-of-type:hover >h2  {
   transform:  translateX(calc((100% - 180px) / 2));
 }
@@ -524,9 +523,15 @@ main section:last-of-type:hover >h2, main section:last-of-type:hover >p {
   filter: brightness(70%);
 }
 
-#side-bar ul li:hover a , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
+#side-bar ul li:hover a , #bottom-bar .now-playing button:hover {
   color: white;
 }
+
+#nav-bar li.menu:hover a{
+  color: #99faff;
+  filter: brightness(80%);
+}
+
 #side-bar ul li:hover i.fa-plus{
   background-color: white;
 }
