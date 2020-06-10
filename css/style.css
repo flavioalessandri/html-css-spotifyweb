@@ -278,17 +278,16 @@ img[alt~="logo-small"] {
 }
 
 .project-overlay {
-  font-size: 4.5em;
-  line-height: 1em;
+  font-size: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
   opacity:0;
   color: #fff;
-  padding: 35%;
   transition: 0.4s ease-in-out;
   transform: translate(-50% ,-50%);
 }
+
 
 /* .............BOTTOM BAR..................................... */
 #bottom-bar{
