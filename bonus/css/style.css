@@ -37,6 +37,7 @@ h2{
   padding: 15px 0;
   font-size: 1.7em;
   font-weight: 700;
+  transition: all .5s;
 }
 
 h3, .spotify-sections h3> a{
@@ -44,6 +45,7 @@ h3, .spotify-sections h3> a{
   padding: 15px 0;
   font-size: 1.1em;
   font-weight: 700;
+  transition: all .2s;
 }
 
 #side-bar h3{
@@ -54,6 +56,7 @@ h4{
   padding-bottom: 15px;
   font-size: .9em;
   font-weight: 600;
+  transition: all .2s;
 }
 
 a {
@@ -70,6 +73,7 @@ p {
   padding-bottom: 15px;
   font-size: .9em;
   font-weight: 600;
+  transition: all .55s;
 }
 
 /* ...............................SIDEBAR ................................. */
@@ -119,6 +123,13 @@ img[alt~="logo-small"] {
 
 #side-bar .main-logo img{
   height: 35px;
+  animation: zoom-anim 3s infinite;
+}
+
+@keyframes zoom-anim{
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  0% {transform: scale(1);}
 }
 
 #side-bar .usersearch img , #side-bar .playlist img {
@@ -285,6 +296,7 @@ img[alt~="logo-small"] {
   width: 190px;
   text-align: center;
   margin-right:10px;
+  transition: all .2s;
 }
 
 
@@ -292,6 +304,7 @@ img[alt~="logo-small"] {
 .spotify-sections .content .img-cover img{
   box-shadow: 0px 0px 8px lightgrey;
   border-radius: 50%;
+  transition: all .2s;
 }
 
 /*....SEZIONE IMMAGINI DELLA SEZIONE SPOTIFY..................... */
@@ -311,7 +324,7 @@ img[alt~="logo-small"] {
   left: 50%;
   opacity:0;
   color: #fff;
-  transition: opacity .3s ease-in-out , transform .5s ease-in-out ;
+  transition: opacity .2s ease-in-out , transform .3s ease-in-out ;
 
   transform: translate(-50% ,-50%) rotate(-40deg);
 }
@@ -477,6 +490,30 @@ img[alt~="logo-small"] {
 }
 
 /* .............SEZIONE GENERALE HOVER .............................. */
+
+.spotify-sections .content:hover {
+  transform: scale(1.05);
+}
+
+.spotify-sections .content:hover >h3, .spotify-sections .content:hover >h4{
+  transform: scale(1.2);
+}
+
+
+
+main section:first-of-type:hover >h2  {
+  transform:  translateX(calc((100% - 180px) / 2));
+}
+
+main section:nth-of-type(2):hover >h2, main section:nth-of-type(2):hover > p {
+  transform:  translateX(10%);
+}
+
+main section:last-of-type:hover >h2, main section:last-of-type:hover >p {
+  transform:  translateX(10%);
+}
+
+
 .img-cover.overlay:hover .project-overlay{
   transform: translate(-50% ,-50%) rotate(0deg);
   opacity:1;
@@ -484,7 +521,7 @@ img[alt~="logo-small"] {
 
 
 .spotify-sections .content .img-cover:hover img{
-  filter: brightness(40%);
+  filter: brightness(70%);
 }
 
 #side-bar ul li:hover a , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
@@ -594,23 +631,11 @@ img[alt~="logo-small"] {
 /* .......MEDIA QUERY SM.................................................... */
 @media all  and (max-width:767px){
 
-  /* .spotify-sections .content {
-    width: calc(100% / 2);
-    text-align: center;
-  }
-
-  .spotify-sections .content .img-cover img{
-    max-width: 400px;
-  } */
 }
 
 /* ......................MEDIA QUERY MD .................................*/
 @media all and (min-width:768px) and (max-width:992px){
 
-  /* .spotify-sections .content {
-    width: calc(100% / 4);
-    text-align: center;
-  } */
 }
 
 /* ......................MEDIA QUERY MD .................................*/
@@ -640,8 +665,6 @@ img[alt~="logo-small"] {
   }
 
 }
-
-
 
 /* ......................MEDIA QUERY ALTEZZE....................................*/
 @media all and (max-height:570px) {
