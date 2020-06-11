@@ -64,6 +64,7 @@ p {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: nowrap;
+  line-height: 2.5em;
 }
 
 #side-bar .song-playing{
@@ -81,9 +82,20 @@ p {
   font-weight: 500;
 }
 
-#side-bar ul.playlist >li:first-of-type a {
+#side-bar .my-playlist{
   font-size: 1.2em;
   font-weight: 500;
+}
+
+#side-bar .fa-plus{
+  width:30px;
+  height:30px;
+  color:black;
+  font-size: 1.2em;
+  padding: 7px 8px;
+  margin-right: 8px;
+  background-color: #75787c;
+  vertical-align: middle;
 }
 
 /* SIDEBAR ......................Sezione immagini ....................*/
@@ -96,11 +108,15 @@ img[alt~="logo-small"] {
   padding-bottom:30px;
 }
 
+#side-bar  .usersearch img{
+  margin-right:10px;
+}
+
 #side-bar .main-logo img{
   height: 35px;
 }
 
-#side-bar .usersearch img , #side-bar .playlist img {
+#side-bar .usersearch img {
   width:25px;
   height: auto;
   vertical-align: middle;
@@ -123,26 +139,12 @@ img[alt~="logo-small"] {
 }
 
 #side-bar ul li{
-  line-height: 2em;
   list-style-type: none;
   width:100%;
 }
 
-/* simbolo del + della sidebar */
-#side-bar ul li i.fa-plus{
-  width:30px;
-  height:30px;
-  color:black;
-  font-size: 1.2em;
-  padding: 7px 8px;
-  margin-right: 8px;
-  background-color: #75787c;
-  vertical-align: middle;
-}
-
 #side-bar ul.song-playing li:last-of-type{
   border-top: 1px solid white;
-  padding-top: 5px;
 }
 
 #side-bar ul.song-playing li span{
@@ -464,10 +466,10 @@ img[alt~="logo-small"] {
   filter: brightness(40%);
 }
 
-#side-bar ul li:hover a , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
+#side-bar ul li:hover a,#side-bar .my-playlist:hover , #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
   color: white;
 }
-#side-bar ul li:hover i.fa-plus{
+#side-bar .my-playlist:hover i.fa-plus{
   background-color: white;
 }
 
