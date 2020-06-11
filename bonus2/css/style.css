@@ -1,0 +1,586 @@
+/* INIZIO REGOLE GENERALI */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color:black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color:rgb(101, 104, 113);
+  overflow-y: hidden;
+}
+
+/* - PADDING GENERALI */
+.centratura{
+  padding-right:10px;
+  padding-left: 10px;
+}
+
+/* STILE GENERALE TESTI */
+h2{
+  color:white;
+  padding: 15px 0;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+h3, .spotify-sections h3> a{
+  color:white;
+  padding: 15px 0;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+h4{
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color:rgb(101, 104, 113);
+}
+
+p {
+  padding-bottom: 15px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+/* ..............................SIDEBAR ................................. */
+#side-bar{
+  float: left;
+  height:calc(100vh - 80px);
+  width:180px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  line-height: 2.5em;
+}
+
+/* flex-auto make the item grow bringing the last item to the end of the column */
+.playlist-group{
+  flex: auto;
+}
+
+#side-bar a{
+  color:#75787c;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+#side-bar .my-playlist{
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+#side-bar .fa-plus{
+  width:30px;
+  height:30px;
+  color:black;
+
+  padding: 7px 8px;
+  margin-right: 8px;
+  background-color: #75787c;
+  vertical-align: middle;
+}
+
+/* SIDEBAR ......................Sezione immagini ....................*/
+img[alt~="logo-small"] {
+  display:none;
+}
+
+#side-bar .main-logo{
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+
+#side-bar .main-logo img{
+  height: 35px;
+}
+
+#side-bar .usersearch img {
+  width:25px;
+  height: auto;
+  vertical-align: middle;
+  margin-right:10px;
+}
+
+#side-bar .song-playing .profile img {
+  width:20px;
+  background-color: #75787c;
+  vertical-align: middle;
+}
+
+.radius{
+  border-radius: 50%;
+}
+
+/* SIDEBAR ......................Stile lista .................... */
+#side-bar ul{
+  padding:0;
+}
+
+#side-bar ul li{
+  list-style-type: none;
+}
+
+#side-bar .song-playing li:last-of-type{
+  border-top: 1px solid #75787c;
+}
+
+#side-bar .song-playing li span{
+  padding-left: 15px;
+}
+
+#side-bar .fa-arrow-alt-circle-down{
+  font-size: 1.2em;
+}
+
+#side-bar .song-playing li:last-of-type span{
+  color: white;
+  font-size: 1.2em;
+}
+
+/* .....................MAIN CONTAINER.................................. */
+
+/* a container with flex-direction column */
+#main-container {
+  float: left;
+  width:calc(100% - 180px);
+  height:calc(100vh - 80px); /* or position:absolute; height:100%; */
+  display: flex;
+  flex-direction: column;
+}
+/* il content wrapper è un contenitore FLEX dal comportamento ROW
+serve a rendere il content un flex-item e dargli flex-grow:1 */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* flex: 1; */
+  min-height: 0px; /* IMPORTANT: you need this for non-chrome browsers */
+}
+
+/* the container for overflowed content - the only item inside content-wrapper */
+.overflow-container {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+/* - ......................SEZIONE CONTENUTO MAIN.......................... */
+/* ............................TOP BAR.............................  */
+
+/* an arbitrary container of fixed height */
+#top-bar {
+  height: 80px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(24, 24, 33,1);
+}
+
+#top-bar button{
+  font-size: 10px;
+  padding: 10px 35px;
+  border:1px solid white;
+  color:white;
+  border-radius:20px;
+  background-color: transparent;
+}
+
+/* ............................MAIN CONTAINER.............................  */
+/* A container with flex-direction column */
+#overflow-content{
+  /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  background-color:rgb(35, 39, 47);
+}
+/* ............................INFOBAR.............................  */
+#nav-bar ul{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* centratura del testo con linea verde sottostante */
+#nav-bar ul .menu{
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-bar ul .menu>div.linea{
+  display: block;
+  width:30px;
+  height: 2px;
+  border-radius: 3px;
+  background-color: rgb(173, 255, 47);
+}
+
+#nav-bar ul .menu>div:not(:first-child){
+  display: none;
+}
+
+#nav-bar ul .menu a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav-bar a {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+  font-weight: 400;
+  /* color:#75787c; */
+}
+
+/* SEZIONE CONTENUTO MAIN............................. PAGINA SPOTIFY */
+#recently-played , #suggested-artist , #popular-artist {
+  display: flex;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.spotify-sections .content {
+  width: calc(100% / 6);
+  text-align: center;
+}
+
+/* SEZIONE CONTENUTO MAIN.........................STILI IMMAGINI */
+#popular-artist.spotify-sections .content .img-cover img{
+  border-radius: 50%;
+}
+
+/*....SEZIONE IMMAGINI DELLA SEZIONE SPOTIFY..................... */
+.img-cover.overlay {
+  position: relative;
+}
+
+.spotify-sections .content .img-cover img{
+  width: 95%;
+  max-width: 180px;
+  height: auto;
+  transition: filter 0.3s ease-in-out;
+}
+
+.project-overlay {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity:0;
+  color: transparent;
+  transition: all 0.4s ease-in-out;
+  transform: translate(-50% ,-50%);
+}
+
+/* ...............................BOTTOM BAR ................................. */
+#bottom-bar{
+  float: left;
+  height:80px;
+  width:100%;
+  background-color: lightblue;
+  display: flex;
+  flex-flow:row;
+  justify-content: space-between;
+  align-items:center;
+  background-color: rgba(24, 24, 24,1)!important;
+}
+
+/* .............BOTTOM BAR / SEZ NOW-PLAYING................ */
+#bottom-bar .now-playing{
+  padding-right: 0;
+  max-width: 180px;
+  height:50px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+#bottom-bar .now-playing>div:first-of-type{
+  min-width: 35px;
+}
+
+#bottom-bar .now-playing img{
+  width:30px;
+  height:auto;
+  vertical-align: middle;
+}
+
+#bottom-bar .now-playing h3{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#bottom-bar .now-playing h3 a{
+  font-size: 0.85em;
+  color: white;
+}
+
+#bottom-bar .now-playing button{
+  color: #75787c;
+  padding:2px 6px;
+}
+
+/* ..........BOTTOM BAR /  MUSIC-PLAYER.......................... */
+#bottom-bar .music-player{
+  width: 30%;
+  min-width:100px;
+  display: flex;
+  flex-flow:column;
+  justify-content:center;
+  align-items:center;
+}
+
+#bottom-bar .music-player button {
+  color: white;
+  padding-right: 4px;
+}
+#bottom-bar .music-player button:last-of-type{
+  padding-right: 0;
+}
+
+#bottom-bar .music-player .buttons{
+  height:30px;
+}
+
+#bottom-bar .music-player button{
+  color:white;
+  font-size: 0.8em;
+  vertical-align: middle;
+  transition: all 0.1s ease-out;
+}
+#bottom-bar .music-player button i.fa-play-circle{
+  font-size: 1.8em;
+  padding: 0 6px;
+  vertical-align: middle;
+  transition: all 0.1s ease-out;
+}
+
+#bottom-bar .music-player .playbar a{
+  color:white;
+  font-size: 0.7em;
+  vertical-align: middle;
+}
+
+/* ...........BOTTOM BAR /  AUDIO-SETTINGS.............................. */
+#bottom-bar .audio-settings{
+  padding-left: 10px;
+  width:180px;
+  min-width: 90px;
+  display:flex;
+  justify-content: space-between;
+}
+
+#bottom-bar .audio-settings button {
+  color:white;
+  font-size: 0.75em;
+  vertical-align: middle;
+  padding-right: 8px;
+}
+
+/* .............BOTTOM BAR regole generali............................... */
+#bottom-bar button {
+  background-color: transparent;
+  border: 0;
+}
+
+/* .............BOTTOM BAR regole generali DELLA PLAYBAR.................... */
+#bottom-bar .playbar{
+  width:100%;
+  display: flex;
+  flex-flow:row;
+  justify-content:center;
+  align-items:center;
+}
+
+#bottom-bar .playbar .playbar-bg{
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  border-radius: 3px;
+  background-color: #5a5a5a;
+  margin: 0 5px;
+}
+
+#bottom-bar .playbar .playbar-bg .playbar-line{
+  position: absolute;
+  left:0px;
+  width:40%;
+  height:4px;
+  border-radius: 3px;
+  background-color: #c1c1c1;
+}
+
+#bottom-bar .music-player .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  color: #c1c1c1;
+  right:60%;
+  line-height: 4px;
+}
+
+#bottom-bar .audio-settings .fa-circle{
+  position: absolute;
+  display: none;
+  font-size: 10px;
+  color: #c1c1c1;
+  right:60%;
+  line-height: 3px;
+}
+
+
+/* .............SEZIONE GENERALE HOVER .............................. */
+#top-bar button:hover{
+  transform: scale(1.05);
+}
+
+#nav-bar .menu>div.linea:target{
+  display: block;
+}
+
+.img-cover.overlay:hover .project-overlay{
+  color:white;
+  opacity:1;
+}
+
+.spotify-sections .content .img-cover:hover img{
+  filter: brightness(40%);
+}
+
+#side-bar ul li:hover a, #side-bar a:hover span, #nav-bar li:hover a, #bottom-bar .now-playing button:hover {
+  color: white;
+}
+#side-bar .my-playlist:hover i.fa-plus{
+  background-color: white;
+}
+
+#side-bar .song-playing .profile:hover img {
+  background-color: black;
+  filter: invert(100%);
+}
+
+/* circle appear once playbar is hovered */
+#bottom-bar .music-player .playbar:hover .fa-circle,
+#bottom-bar .audio-settings .playbar:hover .fa-circle{
+  display: block;
+}
+
+#bottom-bar .music-player .playbar:hover .playbar-bg .playbar-line{
+  background-color: rgb(173, 255, 47);
+}
+
+#bottom-bar .music-player .buttons button:hover {
+  transform: scale(1.4);
+}
+
+#bottom-bar .music-player button:hover i.fa-play-circle{
+  transform: scale(.9);
+}
+
+
+
+/* ......................MEDIA QUERIES................................... */
+
+@media all  and (max-width:320px){
+
+  .spotify-sections .content {
+    width: 100%!important;
+    text-align: center;
+  }
+  .spotify-sections .content .img-cover img{
+    max-width: 250px;
+  }
+}
+/* .............MEDIA QUERY XS................................... */
+@media all and (max-width:575px) {
+
+  #main-container{
+    width:calc(100% - 45px)!important;
+  }
+
+/* nuove dimensioni della SideBar */
+  #side-bar{
+    width:45px!important;
+    padding-top:5px;
+  }
+
+  #side-bar .main-logo{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
+
+  #side-bar .fa-arrow-alt-circle-down{
+    font-size: 1.2em;
+    padding-left: 4px;
+  }
+
+  #side-bar ul.song-playing li:last-of-type{
+    border-top: 0;
+  }
+
+ /* elementi della sidebar che devono essere nascosti */
+  .collapse{
+    display:none;
+  }
+
+  img[alt~="main-logo"] {
+    display:none;
+  }
+
+  img[alt~="logo-small"] {
+    display:block;
+    width:25px;
+  }
+}
+
+/* .......MEDIA QUERY SM.................................................... */
+@media all  and (max-width:767px){
+
+  .spotify-sections .content {
+    width: calc(100% / 2);
+    text-align: center;
+  }
+
+  .spotify-sections .content .img-cover img{
+    max-width: 400px;
+  }
+}
+
+/* ......................MEDIA QUERY MD .................................*/
+@media all and (min-width:768px) and (max-width:992px){
+
+  .spotify-sections .content {
+    width: calc(100% / 4);
+    text-align: center;
+  }
+}
+
+/* ......................MEDIA QUERY ALTEZZE....................................*/
+@media all and (max-height:570px) {
+/* rendi visibile scrollbar della SIDEBAR per H inferiori a 576PX */
+  #side-bar .playlist.scroll{
+    overflow-y: scroll;
+    height:200px;
+  }
+}
